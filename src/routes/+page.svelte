@@ -2,6 +2,15 @@
 	import "./home.scss";
 	import { counter } from "./home.svelte";
 	import HomeComponent from "./HomeComponent.svelte";
+	import { home } from "./data.svelte";
+
+	import type { PageServerData } from "./$types";
+
+	export let data: PageServerData;
+
+	home.users = data.users;
+
+	console.log(home.users);
 </script>
 
 <template>
@@ -27,6 +36,10 @@
 		title="Home"
 		sign="Leo"
 	/>
+
+	{#each home.users as user, index (index)}
+		<p>{user.email}</p>
+	{/each}
 </template>
 
 <style lang="scss">
