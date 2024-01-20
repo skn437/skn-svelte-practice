@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	gap: 20px;
+
+	.increment,
+	.decrement {
+		border: 0;
+		box-shadow: 0 0 20px 5px hsla(255, 60%, 40%, 0.9);
+		padding: 10px;
+		margin: 10px;
+		border-radius: 30px;
+	}
+
+	.square {
+		box-shadow: 0 0 20px 5px hsla(168, 60%, 40%, 0.9);
+		border: 0;
+	}
+}

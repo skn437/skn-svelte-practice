@@ -1,0 +1,72 @@
+{
+	"TS: Svelte: Rune: State": {
+		"prefix": "$state",
+		"body": ["\\$state<${1:StateType}>($0);"],
+		"description": "TS: Svelte: Rune: State"
+	},
+	"TS: Svelte: Rune: Frozen State": {
+		"prefix": "$state.frozen",
+		"body": ["\\$state.frozen<${1:StateType}>($0);"],
+		"description": "TS: Svelte: Rune: Frozen State"
+	},
+	"TS: Svelte: Rune: Derived": {
+		"prefix": "$derived",
+		"body": ["\\$derived($0);"],
+		"description": "TS: Svelte: Rune: Derived"
+	},
+	"TS: Svelte: Rune: Props": {
+		"prefix": "$props",
+		"body": [
+			"interface PropsType {$0}",
+			"",
+			"let {  } = \\$props<PropsType>();"
+		],
+		"description": "TS: Svelte: Rune: Props"
+	},
+	"TS: Svelte: Rune: Effect": {
+		"prefix": "$effect",
+		"body": ["\\$effect(() => {", "  $0", "});"],
+		"description": "TS: Svelte: Rune: Effect"
+	},
+	"TS: Svelte: Rune: Pre Effect": {
+		"prefix": "$effect.pre",
+		"body": ["\\$effect.pre(() => {", "  $0", "});"],
+		"description": "TS: Svelte: Rune: Pre Effect"
+	},
+	"TS: Svelte: Rune: Active Effect": {
+		"prefix": "$effect.active",
+		"body": ["\\$effect.active()"],
+		"description": "TS: Svelte: Rune: Active Effect"
+	},
+	"TS: Svelte: Rune: Root Effect": {
+		"prefix": "$effect.root",
+		"body": [
+			"const cleanup = \\$effect.root(() => {",
+			"  \\$effect(() => {",
+			"    $0",
+			"  });",
+			"",
+			"  return () => {",
+			"    console.log(\"Effect Root Cleanup Done!\");",
+			"  };",
+			"});"
+		],
+		"description": "TS: Svelte: Rune: Root Effect"
+	},
+	"TS: Svelte: Rune: Inspect": {
+		"prefix": "$inspect",
+		"body": ["\\$inspect($0);"],
+		"description": "TS: Svelte: Rune: Inspect"
+	},
+	"TS: Svelte: Rune: Debugger Inspect": {
+		"prefix": "$inspect.debug",
+		"body": [
+			"\\$inspect(${1:variable}).with((type, ${1:variable}) => {",
+			"  if (type === \"update\") {",
+			"    debugger;",
+			"  }",
+			"});"
+		],
+		"description": "TS: Svelte: Rune: Debugger Inspect"
+	}
+}
