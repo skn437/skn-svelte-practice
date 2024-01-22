@@ -6,7 +6,12 @@
 
 	import type { PageServerData } from "./$types";
 
-	export let data: PageServerData;
+	//export let data: PageServerData;
+	interface PropsType {
+		data: PageServerData;
+	}
+
+	let { data } = $props<PropsType>(); //* Definite Assignment Assertions
 
 	home.users = data.users;
 
