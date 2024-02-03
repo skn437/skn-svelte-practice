@@ -1,4 +1,3 @@
-import { Observable } from "rxjs/internal/Observable";
 import type { Observer } from "rxjs/internal/types";
 import type { RxJsStoreType } from "./rxjs.type";
 
@@ -14,8 +13,6 @@ export const CreateRxJsStore = <T>(): RxJsStoreType<T> => {
 			console.log("Data Streaming Completed!");
 		},
 	};
-
-	//let observer = $state.frozen<typeof protoObserver>(protoObserver);
 
 	const store = {
 		get observer() {

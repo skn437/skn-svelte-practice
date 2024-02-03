@@ -2,7 +2,10 @@ import { InitialHomeData, type HomeDataType } from "./data.type";
 
 const HomeDataStore = () => {
 	let users = $state<HomeDataType[]>(InitialHomeData);
-	let total = $state<number>(0);
+	let total = $derived.call<number>(() => {
+		let sum: number = users.reduce((acc, user) => acc + user.id, 0);
+		return sum;
+	});
 
 	const store = {
 		get users() {
@@ -13,9 +16,6 @@ const HomeDataStore = () => {
 		},
 		get total() {
 			return total;
-		},
-		set total(value: number) {
-			total = value;
 		},
 	};
 
