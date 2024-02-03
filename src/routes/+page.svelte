@@ -6,14 +6,11 @@
 
 	import type { PageServerData } from "./$types";
 
-	//export let data: PageServerData;
-	interface PropsType {
-		data: PageServerData;
-	}
+	import { HomePagePipeline } from "./data.pipe";
 
-	let { data } = $props<PropsType>(); //* Definite Assignment Assertions
+	let { data } = $props<PagePropsDataType<PageServerData>>(); //* Definite Assignment Assertions
 
-	home.users = data.users;
+	HomePagePipeline(data);
 
 	console.log(home.users);
 </script>
@@ -45,6 +42,8 @@
 	{#each home.users as user, index (index)}
 		<p>{user.email}</p>
 	{/each}
+
+	<p>{home.total}</p>
 </template>
 
 <style lang="scss">
