@@ -1,5 +1,4 @@
 import { Observable } from "rxjs/internal/Observable";
-import type { Observer } from "rxjs/internal/types";
 import { map } from "rxjs/internal/operators/map";
 
 import { CreateRxJsStore } from "$lib/rxjs/rxjs";
@@ -23,10 +22,8 @@ export const HomePagePipeline = (data: PageServerData) => {
 			return value;
 		}),
 		map((value) => {
-			let totalId = value.reduce((acc, user) => acc + user.id, 0);
-			console.log("Total ID: ", totalId);
-			home.total = totalId;
-			return totalId;
+			console.log("3rd operator data: ", value);
+			return home.total;
 		})
 	);
 
