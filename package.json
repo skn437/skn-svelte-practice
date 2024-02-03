@@ -26,5 +26,9 @@
   "peerDependencies": {
     "concurrently": "latest"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "rxjs": "^7.8.1",
+    "zod": "^3.22.4"
+  }
 }
