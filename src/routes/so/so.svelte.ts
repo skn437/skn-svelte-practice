@@ -15,7 +15,7 @@ export const SknDefaultData: SoRouteSknType[] = [
 const SoRouteStore = (): SoRouteStoreType => {
 	let skn = $state<SoRouteSknType[]>(SknDefaultData);
 
-	let idArray = $derived.call<number[]>(() => {
+	let idArray = $derived.by<number[]>(() => {
 		let ids: number[] = skn.reduce(
 			(acc: number[], data: SoRouteSknType) => [...acc, data.id],
 			[]
@@ -23,7 +23,7 @@ const SoRouteStore = (): SoRouteStoreType => {
 		return ids;
 	});
 
-	let total = $derived.call<number>(() => {
+	let total = $derived.by<number>(() => {
 		let sum = idArray.reduce((acc: number, number: number) => acc + number, 0);
 		return sum;
 	});
