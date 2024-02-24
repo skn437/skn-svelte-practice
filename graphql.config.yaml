@@ -1,0 +1,12 @@
+# GraphQL Typescript Codegen Configurations
+overwrite: true
+
+schema: ./src/lib/schema/graphql/.gen/Schema.graphql
+
+extensions:
+  codegen:
+    generates:
+      ./src/lib/schema/graphql/.gen/graphql.type.ts:
+        plugins:
+          - typescript
+          - typescript-operations

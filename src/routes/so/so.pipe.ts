@@ -1,6 +1,6 @@
 import { Observable } from "rxjs/internal/Observable";
 import type { PageServerData } from "./$types";
-import { CreateRxJsStore } from "$lib/rxjs/rxjs";
+import { CreateRxJsStore } from "$lib/rxjs";
 import { map } from "rxjs/internal/operators/map";
 import { skn } from "./so.svelte";
 

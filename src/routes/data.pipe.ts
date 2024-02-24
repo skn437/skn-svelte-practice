@@ -1,7 +1,7 @@
 import { Observable } from "rxjs/internal/Observable";
 import { map } from "rxjs/internal/operators/map";
 
-import { CreateRxJsStore } from "$lib/rxjs/rxjs";
+import { CreateRxJsStore } from "$lib/rxjs";
 import { home } from "./data.svelte";
 
 import type { PageServerData } from "./$types";
